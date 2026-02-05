@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 
 export function Header() {
     const navItems = [
-        { name: 'Work', href: '#work' },
-        { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Work', href: '/#work' },
+        { name: 'Experience', href: '/experience' },
+        { name: 'About', href: '/#about' },
+        { name: 'Contact', href: '/#contact' },
     ];
 
     return (

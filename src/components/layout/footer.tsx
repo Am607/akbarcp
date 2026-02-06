@@ -27,9 +27,9 @@ export function Footer() {
                             Socials
                         </h4>
                         <div className="flex flex-col gap-2">
-                            <Link href="#" className="text-white/60 hover:text-white transition-colors">Twitter / X</Link>
-                            <Link href="#" className="text-white/60 hover:text-white transition-colors">GitHub</Link>
-                            <Link href="#" className="text-white/60 hover:text-white transition-colors">LinkedIn</Link>
+                            <Link href="https://x.com/AkbarMasterpadi" className="text-white/60 hover:text-white transition-colors">Twitter / X</Link>
+                            <Link href="https://github.com/am607" className="text-white/60 hover:text-white transition-colors">GitHub</Link>
+                            <Link href="https://www.linkedin.com/in/akbarcp/" className="text-white/60 hover:text-white transition-colors">LinkedIn</Link>
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,8 @@ export interface ExperienceCardProps {
     index: number;
 }
 
+import { useSoundEffects } from '@/hooks/use-sound-effects';
+
 export function ExperienceCard({
     company,
     role,
@@ -28,6 +30,8 @@ export function ExperienceCard({
     links,
     index,
 }: ExperienceCardProps) {
+    const { playSound } = useSoundEffects();
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,6 +39,8 @@ export function ExperienceCard({
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="group relative flex flex-col gap-4 rounded-2xl border border-white/5 bg-white/5 p-6 transition-colors hover:bg-white/10 md:flex-row md:items-start md:gap-8"
+            onMouseEnter={() => playSound('hover')}
+            onClick={() => playSound('click')}
         >
             {/* Decorative vertical line for timeline effect if used in a list */}
             <div

@@ -44,7 +44,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background">
       <Hero />
       <section id="work" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl font-bold font-display mb-12 text-white">Selected Work</h2>
+        <h2 className="text-3xl font-bold font-display mb-12 text-white">What I’ve Built</h2>
         <BentoGrid className="max-w-4xl mx-auto">
           {items.map((item, i) => (
             <BentoGridItem

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-background text-foreground`}
       >
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="e3741006-0805-4493-bb40-e84de83e1b11"
+          strategy="afterInteractive"
+        />
         <Header />
         <main className="min-h-screen pt-16">
           {children}

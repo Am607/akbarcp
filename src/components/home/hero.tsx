@@ -7,14 +7,14 @@ export function Hero() {
     return (
         <section className="relative flex min-h-[80vh] flex-col justify-center px-6 md:px-12">
             <div className="mx-auto w-full max-w-5xl">
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     className="mb-6 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur-sm"
                 >
                     Available for new projects
-                </motion.div>
+                </motion.div> */}
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export function Hero() {
                     className="font-display text-5xl font-bold leading-tight tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-9xl"
                 >
                     Visionary <br />
-                    <span className="text-white/40">Developer.</span>
+                    <span className="text-white/40">Builder.</span>
                 </motion.h1>
 
                 <motion.p
@@ -32,8 +32,7 @@ export function Hero() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="mt-8 max-w-xl text-lg text-white/60 md:text-xl"
                 >
-                    I craft digital experiences that merge aesthetics with functionality.
-                    Focusing on minimalism, performance, and user-centric design.
+                    I design and build digital products that solve real-world problems.
                 </motion.p>
 
                 <motion.div
@@ -53,7 +52,7 @@ export function Hero() {
                         href="#contact"
                         className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
                     >
-                        Contact Me
+                        Build with me
                     </a>
                 </motion.div>
             </div>

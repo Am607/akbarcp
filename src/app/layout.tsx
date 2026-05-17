@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Script from "next/script";
-import { CustomCursor } from "@/components/ui/custom-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +41,6 @@ export default function RootLayout({
           data-website-id="e3741006-0805-4493-bb40-e84de83e1b11"
           strategy="afterInteractive"
         />
-        <CustomCursor />
         <Header />
         <main className="min-h-screen pt-16">
           {children}

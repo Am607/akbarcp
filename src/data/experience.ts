@@ -3,11 +3,11 @@ import { ExperienceCardProps } from "@/components/experience/experience-card";
 export const experiences: Omit<ExperienceCardProps, 'index'>[] = [
     {
         company: 'Lascade',
-        role: 'Senior Flutter Developer',
+        role: 'Full Stack Developer',
         period: 'Jun 2024 - Present',
         location: 'Kochi, Kerala, India',
         description: 'Spearheading the mobile development for MarineRadar, a real-time vessel tracking application. Leveraging AIS and satellite data to track over 1 million ships worldwide.',
-        technologies: ['Flutter', 'Dart', 'Google Maps API', 'Socket.io', 'REST APIs', 'DevOps'],
+        technologies: ['Flutter', 'Dart', 'Django', 'Docker', 'Google Maps API', 'Socket.io', 'REST APIs', 'DevOps'],
         color: '#3b82f6', // Indigo/Blue
         links: [
             { label: 'MarineRadar (Android)', url: 'https://play.google.com/store/apps/details?id=com.lascade.marinetracker&hl=en_IN' },

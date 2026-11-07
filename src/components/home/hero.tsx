@@ -1,75 +1,79 @@
-'use client';
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { profile } from "@/data/site";
+import { Radar } from "./radar";
+import { Reveal } from "@/components/ui/reveal";
 
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-
-import { ProcessLadder } from './process-ladder';
-
-import { useSoundEffects } from '@/hooks/use-sound-effects';
+const stats = [
+  { value: `${new Date().getFullYear() - profile.since}+`, label: "years shipping apps" },
+  { value: "1M+", label: "ships tracked live" },
+  { value: "iOS · Android", label: "in the stores" },
+];
 
 export function Hero() {
-    const { playSound } = useSoundEffects();
+  return (
+    <section className="relative mx-auto max-w-6xl px-4 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-36">
+      <div className="grid items-center gap-12 lg:grid-cols-[1.35fr_1fr]">
+        <div>
+          <Reveal>
+            <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 text-xs text-ink-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-sonar" />
+              Open to new opportunities
+            </p>
+          </Reveal>
 
-    return (
-        <section className="relative flex min-h-[90vh] flex-col justify-center px-6 md:px-12 py-20">
-            <div className="mx-auto w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <Reveal delay={0.05}>
+            <h1 className="mt-8 font-serif text-[clamp(3.25rem,10vw,7.5rem)] leading-[0.9] tracking-tight">
+              Akbar CP builds <em className="text-accent">apps</em> people actually use.
+            </h1>
+          </Reveal>
 
-                {/* Left Column: Text Content */}
-                <div className="flex flex-col items-start text-left">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        className="font-display text-5xl font-bold leading-tight tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-9xl"
-                    >
-                        Visionary <br />
-                        <span className="text-white/40">Builder.</span>
-                    </motion.h1>
+          <Reveal delay={0.12}>
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-2">
+              {profile.role} in {profile.location}. {profile.summary}
+            </p>
+          </Reveal>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="mt-8 max-w-xl text-lg text-white/60 md:text-xl"
-                    >
-                        I design and build digital products that solve real-world problems.
-                    </motion.p>
+          <Reveal delay={0.18} className="mt-10 flex flex-wrap gap-3">
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+            >
+              See selected work
+              <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+            </a>
+            <a
+              href="#contact"
+              className="group inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium transition-colors hover:border-ink"
+            >
+              Build with me
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </Reveal>
+        </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                        className="mt-10 flex flex-wrap gap-4"
-                    >
-                        <a
-                            href="#work"
-                            className="group flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-white/90"
-                            onMouseEnter={() => playSound('hover')}
-                            onClick={() => playSound('click')}
-                        >
-                            View Work
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </a>
-                        <a
-                            href="#contact"
-                            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
-                            onMouseEnter={() => playSound('hover')}
-                            onClick={() => playSound('click')}
-                        >
-                            Build with me
-                        </a>
-                    </motion.div>
-                </div>
-
-                {/* Right Column: Process Ladder */}
-                <div className="relative mt-12 lg:mt-0">
-                    <ProcessLadder />
-                </div>
+        <Reveal delay={0.1} className="relative mx-auto w-full max-w-sm lg:max-w-none">
+          <div className="relative aspect-square rounded-[2rem] border border-line bg-surface p-6">
+            <Radar className="h-full w-full" />
+            <div className="absolute bottom-5 left-6 right-6 flex justify-between font-mono text-[10px] uppercase tracking-widest text-ink-3">
+              <span>09.97° N</span>
+              <span>Kochi</span>
+              <span>76.28° E</span>
             </div>
+          </div>
+        </Reveal>
+      </div>
 
-            {/* Background gradients/glows */}
-            <div className="absolute top-1/2 left-1/4 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/5 blur-[120px]" />
-            <div className="absolute top-1/2 right-0 -z-10 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-teal-500/5 blur-[120px]" />
-        </section>
-    );
+      <Reveal delay={0.25}>
+        <dl className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-bg px-6 py-5">
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="font-serif text-4xl">{s.value}</dd>
+              <dd className="mt-1 text-sm text-ink-3">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
+      </Reveal>
+    </section>
+  );
 }
